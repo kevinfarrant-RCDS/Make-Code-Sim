@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MakeCode Circuit Playground Simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/blockly/blockly.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="brand">
+        <span class="brand__icon">⚡</span>
+        <span class="brand__title">MakeCode Circuit Playground Lab</span>
+      </div>
+      <div class="top-bar__actions">
+        <button class="pill" id="run-button">▶ Run</button>
+        <button class="pill pill--ghost" id="stop-button">■ Stop</button>
+        <button class="pill pill--ghost" id="load-sample">Load Sample</button>
+      </div>
+    </header>
+
+    <main class="app">
+      <aside class="sidebar">
+        <section class="board-panel">
+          <h2>Circuit Playground</h2>
+          <div class="board" aria-label="Circuit Playground simulator">
+            <div class="led-ring" id="led-ring" aria-live="polite"></div>
+            <div class="board-center">CPX</div>
+            <div class="board-buttons">
+              <button class="board-button" data-button="A">Button A</button>
+              <button class="board-button" data-button="B">Button B</button>
+            </div>
+          </div>
+          <div class="sensor-row">
+            <div class="sensor">
+              <span>Light</span>
+              <input type="range" id="light-sensor" min="0" max="100" value="50" />
+            </div>
+            <div class="sensor">
+              <span>Sound</span>
+              <input type="range" id="sound-sensor" min="0" max="100" value="20" />
+            </div>
+          </div>
+        </section>
+
+        <section class="toolbox-hint">
+          <h3>Block Categories</h3>
+          <ul>
+            <li>Light, Input, Music</li>
+            <li>Loops, Logic</li>
+            <li>Variables, Math</li>
+            <li>Functions</li>
+          </ul>
+          <p>Drag blocks into the workspace to build a program.</p>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <div id="blockly-workspace" class="blockly-workspace"></div>
+      </section>
+
+      <aside class="lesson-panel">
+        <h2>Mission Control</h2>
+        <div class="lesson">
+          <h3>1. Blink the LEDs</h3>
+          <p>Use a <strong>forever</strong> loop and the <strong>set all lights</strong> block.</p>
+        </div>
+        <div class="lesson">
+          <h3>2. Make a Pattern</h3>
+          <p>Change just one LED at a time with a <strong>repeat</strong> loop.</p>
+        </div>
+        <div class="lesson">
+          <h3>3. Variables + Buttons</h3>
+          <p>Create a variable called <strong>score</strong> and increase it when Button A is pressed.</p>
+        </div>
+        <div class="lesson">
+          <h3>4. Functions</h3>
+          <p>Build a <strong>light show</strong> function and call it inside a loop.</p>
+        </div>
+        <div class="lesson">
+          <h3>Hint</h3>
+          <p>MakeCode lets you switch between blocks and JavaScript. This simulator keeps the same blocks so you can transfer your skills.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span>Tip: Click “Run” to see your Circuit Playground come alive.</span>
+    </footer>
+  </body>
+</html>
